@@ -1,6 +1,6 @@
-# Second chance
+# katastima
 
-Second Chance Program
+Store managment application
 
 ## Project Requirements:
 
@@ -19,7 +19,7 @@ Docker is an open platform for developing, shipping, and running applications. D
 Once you have all the needed requirements installed, clone the project:
 
 ``` bash
-git clone GitURL
+git clone https://github.com/er5bus/katastima.git
 ```
 
 #### Configure .env file:
@@ -29,7 +29,7 @@ Before you can run the project you need to set the envirment varibles:
 ``` env
 NODE_ENV=development # development or production
 
-REACT_APP_API_BASE_URL=http://0.0.0.0:5000 # backend base url
+REACT_APP_API_BASE_URL=http://0.0.0.0:5000
 ```
 
 #### Run the Project in development env:
