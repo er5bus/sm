@@ -2,13 +2,14 @@
   "name": "katastima",
   "version": "0.1.0-alpha",
   "author": {
-    "name": "Rami Sfari"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://gitlab.com/unicef-second-chance/lprs-tn-front-gu.git"
+    "name": "Rami Sfari",
+    "email": "rami2sfari@gmail.com"
   },
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/er5bus/katastima.git"
+  },
   "dependencies": {
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
