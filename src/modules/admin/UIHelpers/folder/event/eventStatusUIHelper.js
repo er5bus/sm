@@ -1,0 +1,19 @@
+export const EVENT_SERVICE_OFFER_BY_A_PARTNER = 3
+export const EVENT_INFO_BY_A_THIRD_PARTY = 5
+export const EVENT_TO_TEENAGER = 6
+
+
+export const EVENT_STATUS = { 
+  1: "EVENT.STATUS.STRUCTURE_TO_TEENAGER",
+  2: "EVENT.STATUS.TEENAGER_TO_STRUCTURE",
+  [EVENT_SERVICE_OFFER_BY_A_PARTNER]: "EVENT.STATUS.SERVICE_OFFER_BY_A_PARTNER" ,
+  4: "EVENT.STATUS.INTERNAL",
+  [EVENT_INFO_BY_A_THIRD_PARTY]: "EVENT.STATUS.INFO_BY_A_THIRD_PARTY",
+  [EVENT_TO_TEENAGER]: "EVENT.STATUS.TO_TEENAGER",
+}
+
+export const eventStatusUIHelper = (intl) =>
+  Object.keys(EVENT_STATUS).map((key) => ({
+    value: parseInt(key),
+    label: intl.formatMessage({ id: EVENT_STATUS[key] }),
+  }))

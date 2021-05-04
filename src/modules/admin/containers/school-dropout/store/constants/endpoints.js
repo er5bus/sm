@@ -1,0 +1,10 @@
+export const SCHOOL_DROPOUTS = "/api/school-dropouts"
+export const SCHOOL_DROPOUT = "/api/school-dropouts/:param"
+export const SCHOOL_DROPOUT_ACTIVATE = "/api/school-dropouts/:param/activate"
+export const SCHOOL_DROPOUT_DEACTIVATE = "/api/school-dropouts/:param/deactivate"
+export const EXPORT_SCHOOL_DROPOUT = "/api/school-dropouts/export"
+export const IMPORT_SCHOOL_DROPOUT = "/api/school-dropouts/import"
+export const SCHOOL_DROPOUT_TRANSFER = "/api/school-dropouts/:param/transfer"
+export const SCHOOL_DROPOUT_CLOSE = "/api/school-dropouts/:param/close"
+export const SCHOOL_DROPOUT_QUALIFY =  "/api/school-dropouts/:param/qualify"
+

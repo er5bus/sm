@@ -1,0 +1,5 @@
+export const ASSESSMENT_LEVELS = "/api/assessment-levels"
+export const ASSESSMENT_LEVEL = "/api/assessment-levels/:param"
+export const ASSESSMENT_LEVEL_ACTIVATE = "/api/assessment-levels/:param/activate"
+export const EXPORT_ASSESSMENT_LEVEL = "/api/assessment-levels/export"
+export const IMPORT_ASSESSMENT_LEVEL = "/api/assessment-levels/import"

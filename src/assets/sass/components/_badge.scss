@@ -1,0 +1,36 @@
+//
+// Badge
+//
+
+.badge {
+    // Fixed size
+    &.badge-circle,
+    &.badge-square {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: $badge-size;
+        min-width: $badge-size;
+        padding: 0 0.1rem;
+    }
+
+    // Circle
+    &.badge-circle {
+        border-radius: 50%;
+        padding: 0;
+        min-width: unset;
+        width: $badge-size;
+    }
+}
+
+@each $name, $value in $theme-colors {
+    .badge-#{$name} {
+        color: theme-inverse-color($name);
+        background-color: $value;
+    }
+
+    .badge-light-#{$name} {
+        color: $value;
+        background-color: theme-light-color($name);
+    }
+}

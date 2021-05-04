@@ -1,0 +1,5 @@
+export const EVALUATION_RUBRICS = "/api/evaluation-rubrics"
+export const EVALUATION_RUBRIC = "/api/evaluation-rubrics/:param"
+export const EVALUATION_RUBRIC_ACTIVATE = "/api/evaluation-rubrics/:param/activate"
+export const EXPORT_EVALUATION_RUBRIC = "/api/evaluation-rubrics/export"
+export const IMPORT_EVALUATION_RUBRIC = "/api/evaluation-rubrics/import"

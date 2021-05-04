@@ -1,0 +1,13 @@
+//
+// Scroll mixins
+//
+
+@mixin scrollbar-color($color) {
+    // Firefox
+    scrollbar-color: $color transparent;
+
+    // Webkit
+    &::-webkit-scrollbar-thumb {
+        background-color: $color;
+    }
+}

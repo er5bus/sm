@@ -1,0 +1,42 @@
+//
+// Tooltip Mixin
+//
+
+@mixin tooltip-theme($bg-color, $color) {
+    .tooltip-inner {
+        color: $color;
+        background-color: $bg-color;
+    }
+
+    &.bs-tooltip-top {
+        .tooltip-arrow {
+            &:before {
+                border-top-color: $bg-color;
+            }
+        }
+    }
+
+    &.bs-tooltip-right {
+        .tooltip-arrow {
+            &:before {
+                border-right-color: $bg-color;
+            }
+        }
+    }
+
+    &.bs-tooltip-bottom {
+        .tooltip-arrow {
+            &:before {
+                border-bottom-color: $bg-color;
+            }
+        }
+    }
+
+    &.bs-tooltip-left {
+        .tooltip-arrow {
+            &:before {
+                border-left-color: $bg-color;
+            }
+        }
+    }
+}

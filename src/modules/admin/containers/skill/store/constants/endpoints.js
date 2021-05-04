@@ -1,0 +1,6 @@
+export const SKILLS = "/api/skills"
+export const SKILL = "/api/skills/:param"
+export const SKILL_DEACTIVATE = "/api/skills/:param"
+export const SKILL_ACTIVATE = "/api/skills/:param/activate"
+export const EXPORT_SKILLS = "/api/skills/export"
+export const IMPORT_SKILLS = "/api/skills/import"

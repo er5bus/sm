@@ -1,0 +1,5 @@
+export const KNOWLEDGE_SKILLS = "/api/knowledge-skills"
+export const KNOWLEDGE_SKILL = "/api/knowledge-skills/:param"
+export const KNOWLEDGE_SKILL_ACTIVATE = "/api/knowledge-skills/:param/activate"
+export const EXPORT_KNOWLEDGE_SKILL = "/api/knowledge-skills/export"
+export const IMPORT_KNOWLEDGE_SKILL = "/api/knowledge-skills/import"

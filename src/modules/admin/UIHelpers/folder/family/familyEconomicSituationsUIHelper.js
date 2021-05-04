@@ -1,0 +1,13 @@
+export const FAMILY_ECONOMIC_SITUATIONS = { 
+    1: "FAMILY_ECONOMIC_SITUATIONS.POOR_FAMILY_INDICATION",
+    2: "FAMILY_ECONOMIC_SITUATIONS.LIMITED_INCOME_INDICATION",
+    3: "FAMILY_ECONOMIC_SITUATIONS.MEDIUM_CAPABILITIES_INDICATION",
+    4: "FAMILY_ECONOMIC_SITUATIONS.AFFORDABLE_INDICATION",
+  }
+  
+export const familyEconomicSituationsUIHelper = (intl) =>
+    Object.keys(FAMILY_ECONOMIC_SITUATIONS).map((key) => ({
+      value: parseInt(key),
+      label: intl.formatMessage({ id: FAMILY_ECONOMIC_SITUATIONS[key] }),
+    }))
+  
