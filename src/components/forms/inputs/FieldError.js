@@ -1,21 +1,21 @@
 import React from "react"
-import { FormattedMessage } from "react-intl"
+import { Trans } from "react-i18next"
 import { ErrorMessage } from "formik"
-import {getAttr} from "../../../../../helpers"
-import {useControlUISelector} from "../.."
+import {getAttr} from "../../../helpers"
+import useFormSelector from "../hooks/useFormSelector"
 
 
 export const FieldError = ({ fieldName }) => {
 
-  const formUiProps = useControlUISelector()
+  const formUiProps = useFormSelector()
 
   if (formUiProps && formUiProps.getFieldError(fieldName)){
-    return <div className="invalid-feedback"><FormattedMessage id={formUiProps.getFieldError(fieldName)} /></div>
+    return <div className="invalid-feedback"><Trans> {formUiProps.getFieldError(fieldName)} </Trans></div>
   }
 
   return <ErrorMessage name={fieldName}>
     {(msg) =>
-    <div className="invalid-feedback"><FormattedMessage { ...JSON.parse(msg) } /></div>
+    <div className="invalid-feedback"><Trans> { msg } </Trans></div>
     }
   </ErrorMessage>
 }
@@ -24,7 +24,7 @@ export const useFieldCSSClasses = (touched, errors, fieldName) => {
   const fieldError = getAttr(errors, fieldName, false)
   const fieldTouched = getAttr(touched, fieldName, false)
 
-  const formUiProps = useControlUISelector()
+  const formUiProps = useFormSelector()
   const classes = [""]
 
   if ((fieldTouched && fieldError) || (formUiProps && formUiProps.getFieldError(fieldName))) {

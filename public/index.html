@@ -10,18 +10,32 @@
       Meta Tags
     -->
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Shop admin panel. A large number of settings, additional services and widgets." />
     <meta name="keywords" content="bootstrap, React, admin themes, free admin themes, bootstrap admin, bootstrap dashboard" />
     <meta name="theme-color" content="#000000" />
     <meta name="description" content="Shop Admin panel" />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+
+    <!--
+      Favicons
+    -->
+    <link rel="shortcut icon" href="%PUBLIC_URL%/media/logos/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="%PUBLIC_URL%/media/logos/favicon.ico" type="image/x-icon">
+
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-    <link rel="manifest" href="%PUBLIC_URL%/media/logos/manifest.json" />
+    <link rel="manifest" href="%PUBLIC_URL%/media/logos/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="%PUBLIC_URL%/media/logos/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <!--
+      Css files
+    -->
+    <link rel="stylesheet" href="%PUBLIC_URL%/css/splash-screen.css">
+    
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -33,11 +47,24 @@
     -->
     <title>katastima</title>
   </head>
-  <body id="kt_body" class="bg-white header-fixed header-tablet-and-mobile-fixed toolbar-enabled toolbar-fixed toolbar-tablet-and-mobile-fixed aside-enabled aside-fixed" style="--kt-toolbar-height:55px;--kt-toolbar-height-tablet-and-mobile:55px">
+  <body id="js-body">
 
-    <!--begin::Scrolltop-->
-    <div id="kt_scrolltop" class="scrolltop" data-kt-scrolltop="true">
-      <!--begin::Svg Icon | path: icons/stockholm/Navigation/Up-2.svg-->
+    <div id="js-root" class="d-flex flex-column flex-root"></div>
+
+    <div id="js-splash-screen">
+      <img
+        src="%PUBLIC_URL%/media/logos/logo.svg"
+        alt="Logo"
+        width="250"
+        height="105"
+      />
+      <svg class="splash-spinner" viewBox="0 0 50 50">
+        <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+      </svg>
+    </div>
+    <!--begin::Scrolltop
+    <div id="js-scrolltop" class="scrolltop" data-kt-scrolltop="true">
+      <!--begin::Svg Icon | path: icons/stockholm/Navigation/Up-2.svg-
       <span class="svg-icon">
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
           <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -47,12 +74,11 @@
           </g>
         </svg>
       </span>
-      <!--end::Svg Icon-->
+      <!--end::Svg Icon--
     </div>
     <!--end::Scrolltop-->
 
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.

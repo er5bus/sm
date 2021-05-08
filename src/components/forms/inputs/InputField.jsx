@@ -47,7 +47,7 @@ const Input = ({
 
   return (
     <div className={inputGroupClassName + (show ? ' d-none' : ' ')}>
-      {label && <label> { label} { (required && " *") }</label>}
+      {label && <label className="form-label fs-6 fw-bolder text-dark"> { label} { (required && " *") }</label>}
       <input
         type={type}
         className={`${inputClassName} ${fieldCSSClasses}` }

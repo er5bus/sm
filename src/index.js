@@ -11,8 +11,10 @@ import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import { BrowserRouter, Switch, Redirect, Route } from 'react-router-dom'
 
+// Import routes
+import { rootRoutes } from "./containers"
+
 //import { Offline, Online } from './components/connectivity'
-import Layout from './modules/authentication/layout/Layout'
 
 // persist
 import { PersistGate } from 'redux-persist/integration/react'
@@ -20,11 +22,8 @@ import { PersistGate } from 'redux-persist/integration/react'
 // store
 import { store, persistor } from './configureStore'
 
-// Import routes
-//import rootRoutes from './routes'
-
 // loaders
-import { SplashScreen } from './components/loaders'
+import { SplashScreen } from './components/controls'
 
 // error pages
 import { NotFoundPage, ErrorBoundary } from './components/error-pages'
@@ -49,7 +48,7 @@ if (isRLTLang()) {
   BODY_NODE.setAttribute('style', "direction: ltr;font-family: 'Poppins';")
 }*/
 
-const MOUNT_NODE = document.getElementById('root')
+const MOUNT_NODE = document.getElementById('js-root')
 
 const ELEM = (
   <>
@@ -57,17 +56,19 @@ const ELEM = (
     <Provider store={store}>
       {/* Asynchronously persist redux stores and show `SplashScreen` while it's loading. */}
       <PersistGate persistor={persistor} loading={<SplashScreen />}>
-            {/* Add high level `Suspense` in case if was not handled inside the React tree. */}
-            <React.Suspense fallback={<SplashScreen />}>
-              <BrowserRouter>
-                <ErrorBoundary>
-                    <Switch>
-                      <Route path="/" component={Layout} />
-                      <Route component={NotFoundPage} />
-                    </Switch>
-                </ErrorBoundary>
-              </BrowserRouter>
-            </React.Suspense>
+        {/* Add high level `Suspense` in case if was not handled inside the React tree. */}
+        <React.Suspense fallback={<SplashScreen />}>
+          <BrowserRouter>
+            <ErrorBoundary>
+              <Switch>
+                { Object.keys(rootRoutes).map((route) => (
+                  <Route key={route} { ...rootRoutes[route] } />
+                )) }
+                <Route component={NotFoundPage} />
+              </Switch>
+            </ErrorBoundary>
+          </BrowserRouter>
+        </React.Suspense>
       </PersistGate>
     </Provider>
   </>

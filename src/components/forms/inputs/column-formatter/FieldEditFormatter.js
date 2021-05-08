@@ -2,7 +2,7 @@ import React from "react"
 import _ from "lodash"
 import { FormattedMessage } from "react-intl"
 import { Button, OverlayTrigger, Popover } from "react-bootstrap"
-import {NestedDynamicForm, INPUT} from "../../.."
+//import {NestedDynamicForm, INPUT} from "../../.."
 
 const EditPopover = React.forwardRef(({ initialValue, formProps: { component, onUpdate, ...formProps }, ...props }, ref) => {
 
@@ -29,13 +29,13 @@ const EditPopover = React.forwardRef(({ initialValue, formProps: { component, on
     <Popover ref={ref} {...props}>
       <Popover.Title as="h3"><FormattedMessage id="GENERAL.EDIT" /></Popover.Title>
       <Popover.Content>
-        <NestedDynamicForm
+        {/*<NestedDynamicForm
           className="p-0"
           initialValues={({ editable: initialValue })}
           fields={[{ name: "editable", component, initialValue, ...formProps }]}
           onSubmit={onUpdateField}
           saveRef={saveRef}
-        />
+        />*/}
       </Popover.Content>
       <div className="border-top py-3 text-right">
         <Button onClick={onSave} type="button" className="btn btn-sm btn-icon btn-light-primary pulse pulse-primary">

@@ -8,6 +8,7 @@ import { createStore, applyMiddleware, compose } from 'redux'
 import storage from 'redux-persist/lib/storage'
 
 import { persistStore, persistReducer,  } from 'redux-persist'
+import {rootReducer} from './containers'
 
 // reducers
 //import rootReducer from './rootReducer'
@@ -45,7 +46,7 @@ const persistConfig = {
   debug: true
 }
 
-const persistedReducer = persistReducer(persistConfig, () => {} /*rootReducer*/)
+const persistedReducer = persistReducer(persistConfig, () => {}, rootReducer)
 
 // Create the store
 export const store = createStore(persistedReducer, composedEnhancers)

@@ -4,27 +4,36 @@
 
 // Form control
 .input-group {
-    &.input-group-solid {
-        background-color: $input-solid-bg;
-		border-color: $input-solid-bg;
-        @include border-radius($input-border-radius);
+  &.input-group-solid {
+    background-color: $input-solid-bg;
+    border-color: $input-solid-bg;
+    @include border-radius($input-border-radius);
 
-        &.input-group-sm {
-            @include border-radius($input-border-radius-sm);
-        }
-
-        &.input-group-lg {
-            @include border-radius($input-border-radius-lg);
-        }
-
-        .input-group-text {
-            background-color: transparent;
-    		border-color: transparent;
-        }
-
-        .form-control {
-            background-color: transparent;
-    		border-color: transparent;
-        }
+    &.input-group-sm {
+      @include border-radius($input-border-radius-sm);
     }
+
+    &.input-group-lg {
+      @include border-radius($input-border-radius-lg);
+    }
+
+    .input-group-text {
+      background-color: transparent;
+      border-color: transparent;
+    }
+
+    .form-control {
+      background-color: transparent;
+      border-color: transparent;
+    }
+  }
 }
+
+.invalid-feedback {
+  text-transform: lowercase;
+
+  &:first-letter {
+    text-transform: uppercase;  
+  }
+}
+
