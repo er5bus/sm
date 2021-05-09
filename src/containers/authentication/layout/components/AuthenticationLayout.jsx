@@ -1,6 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
-import { Link } from "react-router-dom";
 import { Trans } from 'react-i18next'
 
 import { Img } from "./../../../../components/controls"
@@ -29,10 +28,10 @@ const Layout = ({ children }) => (
             </a>
             {/*<!--end::Logo-->*/}
             {/*<!--begin::Title-->*/}
-            <h1 className="fw-bolder fs-2qx pb-5 pb-md-10">Welcome to Kastima</h1>
+            <h1 className="fw-bolder fs-2qx pb-5 pb-md-10"><Trans>Welcome to SM</Trans></h1>
             {/*<!--end::Title-->*/}
             {/*<!--begin::Description-->*/}
-            <p className="fw-bold fs-2">Discover Amazing Kastima <br />with great build tools</p>
+            <p className="fw-bold fs-2"><Trans>Discover Amazing SM <br />with great build tools</Trans></p>
             {/*<!--end::Description-->*/}
           </div>
           {/*<!--end::Header-->*/}
@@ -61,7 +60,7 @@ const Layout = ({ children }) => (
             {/*<!--begin::Links-->*/}
             <div className="d-flex flex-center fw-bold fs-6">
               <div className="text-dark-50 font-weight-bold order-2 order-sm-1 my-2">
-                {/*new Date().getFullYear()} © {APP_VERSION}*/}
+                {new Date().getFullYear()} © {APP_VERSION}
             </div>
             </div>
             {/*<!--end::Links-->*/}

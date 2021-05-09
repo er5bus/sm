@@ -7,20 +7,7 @@ import { Row, Col } from "react-bootstrap"
 import { FORM_COMPONENT, DEFAULT_TYPE } from "./../inputs-types"
 import { createYupSchema, getStorage, setStorage } from "../../../helpers"
 
-import rootReducer from "./../store/reducer"
-import {createDispatchHook, createSelectorHook, createStoreHook, Provider} from "react-redux"
-import {createStore} from "redux"
 import useFormSelector from "../hooks/useFormSelector"
-
-const FormContext = React.createContext()
-
-export const useStore = createStoreHook(FormContext)
-export const useSelector = createSelectorHook(FormContext)
-export const useDispatch = createDispatchHook(FormContext)
-
-console.log(rootReducer)
-
-const formStore = createStore(rootReducer)
 
 
 const DynamicFormError = () => {

@@ -15,7 +15,7 @@ const initialState = {
 }
 
 
-export default (state = initialState, action) => {
+const authReducer = (state = initialState, action) => {
   
   const { payload, type } = action
   
@@ -79,3 +79,6 @@ export default (state = initialState, action) => {
     }
   }
 }
+
+
+export default authReducer

@@ -1,6 +1,8 @@
-# katastima
+# sm
 
 Store managment application
+
+![alt text](https://github.com/er5bus/sm/blob/main/image.jpg?raw=true)
 
 ## Project Requirements:
 
@@ -19,7 +21,7 @@ Docker is an open platform for developing, shipping, and running applications. D
 Once you have all the needed requirements installed, clone the project:
 
 ``` bash
-git clone https://github.com/er5bus/katastima.git
+git clone https://github.com/er5bus/sm.git
 ```
 
 #### Configure .env file:

@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  katastima_dev:
+  sm_dev:
     build:
       context: .
     volumes:

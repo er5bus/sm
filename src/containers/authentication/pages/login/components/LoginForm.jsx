@@ -5,12 +5,12 @@ import { Link } from 'react-router-dom'
 import { Trans } from 'react-i18next'
 
 import { FormProvider, Form } from '../../../../../components/forms'
-
-import fields from './fields/loginFields'
+import {pageRoutes} from '../..'
 
 const LoginForm = (props) => {
   const {
     onSubmit,
+    fields,
     isLoading,
     initialValues = null,
     isSubmitting
@@ -26,7 +26,7 @@ const LoginForm = (props) => {
       >
         <div className='form-group d-flex flex-wrap justify-content-between align-items-center'>
           <Link
-            to='routes.forgotPassword.path'
+            to={pageRoutes.forgotPassword.path}
             className='link-primary fs-6 fw-bolder'
           >
             <Trans> Forgot Password ? </Trans>
@@ -35,16 +35,13 @@ const LoginForm = (props) => {
             type='submit'
             color='primary'
             disabled={isSubmitting}
-            className='btn btn-lg btn-primary fw-bolder me-3 my-2'
+            className='btn btn-md btn-primary fw-bolder me-3 my-2'
           >
-            {isLoading && <span className='spinner spinner-white px-5' />}
+            {isLoading && <span className='spinner-border spinner-border-sm align-left spinner-white mx-2 ' />}
             <span>
               <Trans> Sign In </Trans>
             </span>
           </Button>
-          {/* <div className="d-flex">
-            <LanguageSelectorDropdown />
-          </div> */}
         </div>
       </Form>
     </FormProvider>

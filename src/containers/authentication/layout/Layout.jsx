@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, {useEffect} from "react"
 import { Switch, Redirect, Route, withRouter} from "react-router-dom"
-import {rootRoutes} from "../pages"
+import {pageRoutes} from "../pages"
 
 //import routes from "./../../../routes"
 //import authenticationRoutes from "./../routes"
@@ -10,19 +10,23 @@ import {rootRoutes} from "../pages"
 
 import AuthenticationLayout from "./components/AuthenticationLayout"
 
+const bodyClassName = "bg-white header-fixed header-tablet-and-mobile-fixed toolbar-enabled toolbar-fixed toolbar-tablet-and-mobile-fixed aside-enabled aside-fixed"
+const nodeRootClassName = "d-flex flex-column flex-root"
 
 const BaseLayout = () => {
 
   useEffect(() => {
 
-    const className = "bg-white header-fixed header-tablet-and-mobile-fixed toolbar-enabled toolbar-fixed toolbar-tablet-and-mobile-fixed aside-enabled aside-fixed"
-    const splashScreen = document.getElementById("js-splash-screen")
+    const body = document.getElementById("js-body")
+    const nodeRoot = document.getElementById("js-root")
 
     // Show SplashScreen
-    splashScreen.classList.add(...className.split(" "))
+    body.classList.add(...bodyClassName.split(" "))
+    nodeRoot.classList.add(...nodeRootClassName.split(" "))
 
     return () => {
-      splashScreen.classList.remove(...className.split(" "))
+      body.classList.remove(...bodyClassName.split(" "))
+      nodeRoot.classList.remove(...nodeRootClassName.split(" "))
     }
   }, [])
 
@@ -32,10 +36,10 @@ const BaseLayout = () => {
   return (
     <AuthenticationLayout>
       <Switch>
-        { Object.keys(rootRoutes).map((route) => (
-          <Route key={route} { ...rootRoutes[route] } />
+        { Object.keys(pageRoutes).map((route) => (
+          <Route key={route} { ...pageRoutes[route] } />
         )) }
-        <Redirect from="*" to={rootRoutes.login.path} />
+        <Redirect from="*" to={pageRoutes.login.path} />
       </Switch>
 
     </AuthenticationLayout>

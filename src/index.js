@@ -9,7 +9,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
-import { BrowserRouter, Switch, Redirect, Route } from 'react-router-dom'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
 // Import routes
 import { rootRoutes } from "./containers"
@@ -25,6 +25,9 @@ import { store, persistor } from './configureStore'
 // loaders
 import { SplashScreen } from './components/controls'
 
+// toast
+import { Toaster } from 'react-hot-toast';
+
 // error pages
 import { NotFoundPage, ErrorBoundary } from './components/error-pages'
 
@@ -36,17 +39,6 @@ import './i18n'
 // load main style
 import './assets/sass/style.scss'
 
-// load style
-/*const BODY_NODE = document.getElementsByTagName('body')[0]
-if (isRLTLang()) {
-  BODY_NODE.setAttribute('direction', 'rtl')
-  BODY_NODE.setAttribute('dir', 'rtl')
-  BODY_NODE.setAttribute('style', "direction: rtl;font-family: 'big-vesta';")
-}else {
-  BODY_NODE.setAttribute('direction', 'ltr')
-  BODY_NODE.setAttribute('dir', 'ltr')
-  BODY_NODE.setAttribute('style', "direction: ltr;font-family: 'Poppins';")
-}*/
 
 const MOUNT_NODE = document.getElementById('js-root')
 
@@ -61,14 +53,15 @@ const ELEM = (
           <BrowserRouter>
             <ErrorBoundary>
               <Switch>
-                { Object.keys(rootRoutes).map((route) => (
-                  <Route key={route} { ...rootRoutes[route] } />
+                { rootRoutes.map((route, idx) => (
+                  <Route key={idx} { ...route } />
                 )) }
                 <Route component={NotFoundPage} />
               </Switch>
             </ErrorBoundary>
           </BrowserRouter>
         </React.Suspense>
+        <Toaster position="top-right" reverseOrder={false} />
       </PersistGate>
     </Provider>
   </>
@@ -80,7 +73,7 @@ if (process.env.NODE_ENV !== 'production' && module.hot) {
   // Hot reloadable React components and translation json files
   // modules.hot.accept does not accept dynamic dependencies,
   // have to be constants at compile-time
-  /*module.hot.accept(['./routes'], () => {
+  module.hot.accept(['./containers'], () => {
     ReactDOM.unmountComponentAtNode(MOUNT_NODE).render(ELEM, MOUNT_NODE)
-  })*/
+  })
 }

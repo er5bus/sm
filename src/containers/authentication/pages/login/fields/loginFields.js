@@ -1,5 +1,5 @@
 import * as Yup from "yup"
-import { INPUT } from "./../../../../../../components/forms"
+import { INPUT } from "./../../../../../components/forms"
 
 
 const loginFields = [
@@ -11,7 +11,7 @@ const loginFields = [
     inputClassName: "form-control form-control-lg form-control-solid",
     inputGroupClassName: "fv-row mb-10 fv-plugins-icon-container",
     type: "text",
-    validation: Yup.string().nullable().required()
+    validation: Yup.string().email().nullable().required()
   },
   {
     name: "password",
