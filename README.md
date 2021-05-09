@@ -2,7 +2,7 @@
 
 Store managment application
 
-![alt text](https://github.com/er5bus/sm/blob/main/image.jpg?raw=true)
+![alt text](https://github.com/er5bus/sm/blob/main/docs/img/sign-in.png?raw=true)
 
 ## Project Requirements:
 
